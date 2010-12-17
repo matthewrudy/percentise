@@ -1,0 +1,37 @@
+Percentise
+==========
+
+A single way to produce consistent percentages
+
+Example
+=======
+
+The obvious:
+  >> Percentise(50, 100)
+  => 50.0
+  
+Error cases:
+  >> Percentise(nil, 100)
+  => nil
+  >> Percentise(50, nil)
+  => nil
+  >> Percentise(nil, nil)
+  => nil
+  
+Don't worry about dividing by 0
+
+  >> Percentise(0,0)
+  => 0.0
+  >> Percentise(1,0)
+  => 100.0
+  >> Percentise(-1,0)
+  => -100.0
+  
+Find the % difference 
+
+  >> Percentise.diff(50, 100)
+  => -50.0
+  >> Percentise.diff(100, 50)
+  => 100.0
+  
+Copyright (c) 2010 [Matthew Rudy Jacobs], released under the MIT license
