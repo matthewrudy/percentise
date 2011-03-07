@@ -37,4 +37,16 @@ class PercentiseTest < Test::Unit::TestCase
     assert_equal -50.0, Percentise.diff(50, 100)
   end
   
+  test "diff - if top is nil it is nil" do
+    assert_nil Percentise.diff(nil, 100)
+  end
+  
+  test "diff - if bottom is nil it is nil" do
+    assert_nil Percentise.diff(50, nil)
+  end
+  
+  test "diff - if both are nil" do
+    assert_nil Percentise.diff(nil, nil)
+  end
+  
 end

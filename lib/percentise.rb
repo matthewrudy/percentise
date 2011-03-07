@@ -1,5 +1,7 @@
 # Percentise
 module Percentise
+  
+  VERSION = "0.1.2"
 
   def self.this(top, bottom)
     if top && bottom
@@ -13,7 +15,10 @@ module Percentise
   end
   
   def self.diff(top, bottom)
-    self.this(top - bottom, bottom)
+    # if either is nil, then it is nil
+    if top && bottom
+      self.this(top - bottom, bottom)
+    end
   end
 
 end

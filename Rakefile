@@ -1,6 +1,7 @@
 require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
+require File.dirname(__FILE__)+"/lib/percentise"
 
 desc 'Default: run unit tests.'
 task :default => :test
@@ -35,7 +36,7 @@ spec = Gem::Specification.new do |s|
 
   # Change these as appropriate
   s.name              = "percentise"
-  s.version           = "0.1.1"
+  s.version           = Percentise::VERSION
   s.summary           = "Simple, consistent Percentises"
   s.author            = "Matthew Rudy Jacobs"
   s.email             = "MatthewRudyJacobs@gmail.com"
