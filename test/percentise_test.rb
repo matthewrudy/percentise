@@ -33,7 +33,15 @@ class PercentiseTest < Test::Unit::TestCase
     assert_in_delta 33.3333, Percentise(7, 21), 1E-4
   end
   
-  test "diff" do
+  test "diff - positive" do
+    assert_equal 25.0, Percentise.diff(125, 100)
+  end
+  
+  test "diff - same" do
+    assert_equal 0.0, Percentise.diff(100, 100)
+  end
+  
+  test "diff - negative" do
     assert_equal -50.0, Percentise.diff(50, 100)
   end
   
